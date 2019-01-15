@@ -58,6 +58,8 @@ services:
     volumes:
       - ../python/python-basic/:/home/jovyan/work
     command: start-notebook.sh --NotebookApp.token=""
+    networks: 
+      - elk
 
 networks:
 
