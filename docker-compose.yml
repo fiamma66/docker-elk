@@ -49,6 +49,15 @@ services:
       - elk
     depends_on:
       - elasticsearch
+  jupyter: 
+    image: jupyter/tensorflow-notebook
+    container_name: jupyter
+    restart: always
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../python/python-basic/:/home/jovyan/work
+    command: start-notebook.sh --NotebookApp.token=""
 
 networks:
 
